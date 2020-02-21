@@ -124,6 +124,12 @@ python manage.py migrate
 ## 積み残し
   VSCを使わない場合、`docker-compose up`でコンテナを起動してサービスを立ち上げることができる。  
   DBのデータを永続化させるために、`db`コンテナにディレクトリをマウントさせる必要がある気がする。  
+  settings.py で言語やタイムゾーンの設定をした方がよかったかも
+
+  ```
+  LANGUAGE_CODE = 'ja'
+  TIME_ZONE = 'Asia/Tokyo'
+  ```
 
 ## 終わりに
   https://github.com/nigyta/drm にレポジトリ作成して終了  
