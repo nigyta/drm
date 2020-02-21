@@ -113,7 +113,7 @@ DATABASES = {
 ```
 python manage.py migrate
 ```
-を実行し、DBの初期化を行う(行わずに次に進むと警告が出た)。
+を実行し、DBの初期化を行う(行わずに次に進むと警告が出る。警告は出るがサービスの起動は可能)。
   
 8. サービス起動  
   ```
@@ -122,6 +122,9 @@ python manage.py migrate
   ウェブブラウザで http://localhost:8000 にアクセスしてDjangoの画面が表示されればOK。
 
 ## 積み残し
-  DBのデータを永続化させるために、`db`コンテナにディレクトリをマウントさせる必要がある気がする。
+  VSCを使わない場合、`docker-compose up`でコンテナを起動してサービスを立ち上げることができる。  
+  DBのデータを永続化させるために、`db`コンテナにディレクトリをマウントさせる必要がある気がする。  
 
 ## 終わりに
+  https://github.com/nigyta/drm にレポジトリ作成して終了  
+  tag: day1 とした https://github.com/nigyta/drm/tree/day1
