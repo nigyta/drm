@@ -1,6 +1,5 @@
 from django.shortcuts import render
-# from django.http import HttpResponse　# 不要
-# from django.template import loader # 不要
+from drm.models import Protein
 
 
 def index(request):
@@ -20,3 +19,13 @@ def help(request):
         'message': "help page",
     }
     return render(request, 'drm/index.html', context)
+
+def list_proteins(request):
+    """Proteinの一覧"""
+    proteins = Protein.objects.all().order_by('id')
+    context = {
+        'proteins': proteins,
+        'message': "Protein List"
+    }
+
+    return render(request, 'drm/list_proteins.html', context)

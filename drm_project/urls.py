@@ -18,5 +18,5 @@ from django.urls import path, include  # include追加
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-        path('', include('drm.urls')),  # 追加
+    path('', include('drm.urls')),  # 追加
 ]

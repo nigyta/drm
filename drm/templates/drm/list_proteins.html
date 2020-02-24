@@ -1,0 +1,32 @@
+
+
+<h1>{{ message }}</h1>
+
+<table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Description</th>
+        <th scope="col">Gene</th>
+        <th scope="col">EC number</th>
+        <th scope="col">Flag</th>
+        <th scope="col">Organism</th>
+        <th scope="col">Source DB</th>
+        <th scope="col">Sequence</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for protein in proteins %}
+      <tr>
+        <th scope="row">{{ protein.ref_id }}</th>
+        <td>{{ protein.description }}</td>
+        <td>{{ protein.gene }}</td>
+        <td>{{ protein.ec_number }}</td>
+        <td>{{ protein.flag }}</td>
+        <td>{{ protein.organism }}</td>
+        <td>{{ protein.source_db }}</td>
+        <td>{{ protein.sequence }}</td>
+    </tr>
+      {% endfor %}
+    </tbody>
+  </table>
