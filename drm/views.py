@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from drm.models import Protein
-
+from django.contrib import messages
 
 def index(request):
+    messages.success(request, 'message test')
     context = {
         'message': "Hello world!!!",
     }
@@ -27,5 +28,11 @@ def list_proteins(request):
         'proteins': proteins,
         'message': "Protein List"
     }
-
     return render(request, 'drm/list_proteins.html', context)
+
+def ref_detail(request, ref_id):
+    protein = get_object_or_404(Protein, ref_id=ref_id)
+    context = {
+        'message': f"{protein.ref_id}: {protein.description} ({protein.organism})"
+    }
+    return render(request, 'drm/index.html', context)

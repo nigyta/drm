@@ -170,11 +170,14 @@
     下のようにするとテーブルから全データ取得してリストに格納してくれる。
 
     ```
-    proteins = Protein.objects.all().order_by('id')[:100] # debugのため先頭100件
-    context = {
-        'proteins': proteins,
-        'message': "Protein List"
-    }
+    def list_proteins(request):
+        """Proteinの一覧"""
+        proteins = Protein.objects.all().order_by('id')[:100] # debug用に先頭100件のみ
+        context = {
+            'proteins': proteins,
+            'message': "Protein List"
+        }
+        return render(request, 'drm/list_proteins.html', context)
     ```  
 
     URLは　"http://localhost:8000/proteins"
