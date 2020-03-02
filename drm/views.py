@@ -22,7 +22,7 @@ def help(request):
 
 def list_proteins(request):
     """Proteinの一覧"""
-    proteins = Protein.objects.all().order_by('id')
+    proteins = Protein.objects.all().order_by('id')[:100] # debug用に先頭100件のみ
     context = {
         'proteins': proteins,
         'message': "Protein List"

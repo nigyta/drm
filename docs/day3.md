@@ -170,13 +170,19 @@
     下のようにするとテーブルから全データ取得してリストに格納してくれる。
 
     ```
-    proteins = Protein.objects.all().order_by('id')
+    proteins = Protein.objects.all().order_by('id')[:100] # debugのため先頭100件
     context = {
         'proteins': proteins,
         'message': "Protein List"
     }
     ```  
 
+    URLは　"http://localhost:8000/proteins"
+
 ## まとめ
     モデルの作成とadminページの利用について扱った。
     次回はDBへの一括データ投入
+
+## その他
+    Postgresqlに接続するプラグインとしてSQLToolsをVSCにインストールして使った。
+    
